@@ -1,0 +1,15 @@
+E:\Projects\BilibiliTools\src\BilibiliTools\bin\Debug\netcoreapp3.1\BilibiliTools.exe
+E:\Projects\BilibiliTools\src\BilibiliTools\bin\Debug\netcoreapp3.1\BilibiliTools.deps.json
+E:\Projects\BilibiliTools\src\BilibiliTools\bin\Debug\netcoreapp3.1\BilibiliTools.runtimeconfig.json
+E:\Projects\BilibiliTools\src\BilibiliTools\bin\Debug\netcoreapp3.1\BilibiliTools.runtimeconfig.dev.json
+E:\Projects\BilibiliTools\src\BilibiliTools\bin\Debug\netcoreapp3.1\BilibiliTools.dll
+E:\Projects\BilibiliTools\src\BilibiliTools\bin\Debug\netcoreapp3.1\BilibiliTools.pdb
+E:\Projects\BilibiliTools\src\BilibiliTools\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+E:\Projects\BilibiliTools\src\BilibiliTools\obj\Debug\netcoreapp3.1\BilibiliTools.csprojAssemblyReference.cache
+E:\Projects\BilibiliTools\src\BilibiliTools\obj\Debug\netcoreapp3.1\BilibiliTools.AssemblyInfoInputs.cache
+E:\Projects\BilibiliTools\src\BilibiliTools\obj\Debug\netcoreapp3.1\BilibiliTools.AssemblyInfo.cs
+E:\Projects\BilibiliTools\src\BilibiliTools\obj\Debug\netcoreapp3.1\BilibiliTools.csproj.CoreCompileInputs.cache
+E:\Projects\BilibiliTools\src\BilibiliTools\obj\Debug\netcoreapp3.1\BilibiliTools.csproj.CopyComplete
+E:\Projects\BilibiliTools\src\BilibiliTools\obj\Debug\netcoreapp3.1\BilibiliTools.dll
+E:\Projects\BilibiliTools\src\BilibiliTools\obj\Debug\netcoreapp3.1\BilibiliTools.pdb
+E:\Projects\BilibiliTools\src\BilibiliTools\obj\Debug\netcoreapp3.1\BilibiliTools.genruntimeconfig.cache
