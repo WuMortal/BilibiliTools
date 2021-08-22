@@ -4,10 +4,10 @@ namespace BilibiliTools.Model
 {
     public class Uploader
     {
-        public string Id { get; set; }
+        public string UploaderId { get; set; }
 
-        public string Name { get; set; }
+        public string UploaderName { get; set; }
 
-        public DateTime CreatedTime { get; set; }
+        public DateTime CreateDate { get; set; }
     }
 }

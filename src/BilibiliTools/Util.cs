@@ -7,6 +7,8 @@ namespace BilibiliTools
 {
     public static class Util
     {
+
+
         public static string GetEpisodeName(string filePath)
         {
             var infoFile = File.ReadAllText(filePath);
@@ -24,7 +26,8 @@ namespace BilibiliTools
 
         // 返回取得字符串缓冲区的长度
         [DllImport("kernel32", CharSet = CharSet.Auto)]
-        private static extern long GetPrivateProfileString(string section, string key, string strDefault, StringBuilder retVal, int size,
+        private static extern long GetPrivateProfileString(string section, string key, string strDefault,
+            StringBuilder retVal, int size,
             string filePath);
 
         [DllImport("Kernel32.dll", CharSet = CharSet.Auto)]

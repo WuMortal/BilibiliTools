@@ -11,6 +11,8 @@ namespace BilibiliTools
 {
     public class Analyzer
     {
+        private readonly IConverter _analysisResultConverter = new SQLiteConverter();
+
         private List<Uploader> _uploaderList = new List<Uploader>();
         private List<Episode> _episodeList = new List<Episode>();
         private List<Part> _partList = new List<Part>();
@@ -44,9 +46,10 @@ namespace BilibiliTools
                     Console.WriteLine($"{DateTime.Now:yyyy-MM-dd HH:mm:ss:ffff} - {e.Message}");
                 }
             }
+            _analysisResultConverter.Convert(_uploaderList, _episodeList, _partList);
         }
 
-        private bool UploaderIsExist(string uploaderId) => _uploaderList.Any(u => u.Id.Equals(uploaderId));
+        private bool UploaderIsExist(string uploaderId) => _uploaderList.Any(u => u.UploaderId.Equals(uploaderId));
 
         private BilibiliVideoInfo BuildBilibiliVideoInfo(DirectoryInfo directoryInfo)
         {

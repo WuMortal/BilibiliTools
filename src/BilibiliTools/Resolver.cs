@@ -13,9 +13,9 @@ namespace BilibiliTools
         {
             return new Uploader
             {
-                Id = bilibiliVideoInfo.Mid,
-                Name = bilibiliVideoInfo.Uploader,
-                CreatedTime = DateTime.Now
+                UploaderId = bilibiliVideoInfo.Mid,
+                UploaderName = bilibiliVideoInfo.Uploader,
+                CreateDate = DateTime.Now
             };
         }
 
