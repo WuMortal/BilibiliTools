@@ -11,7 +11,7 @@ namespace BilibiliTools
         static async Task Main(string[] args)
         {
             await Init();
-            var analyzer = new Analyzer();
+            var analyzer = new Analyzer(new SQLiteConverter());
             analyzer.Analyze(@"E:\Temp");
             Console.WriteLine("complete!");
         }

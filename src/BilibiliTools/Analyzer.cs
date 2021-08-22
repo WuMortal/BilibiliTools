@@ -11,13 +11,18 @@ namespace BilibiliTools
 {
     public class Analyzer
     {
-        private readonly IConverter _analysisResultConverter = new SQLiteConverter();
+        private readonly IConverter _analysisResultConverter;
 
         private List<Uploader> _uploaderList = new List<Uploader>();
         private List<Episode> _episodeList = new List<Episode>();
         private List<Part> _partList = new List<Part>();
 
         private readonly DateTime _lastAnalysisTime = new DateTime(1999, 01, 01);
+
+        public Analyzer(IConverter analysisResultConverter)
+        {
+            _analysisResultConverter = analysisResultConverter;
+        }
 
         public void Analyze(string path)
         {
@@ -46,6 +51,7 @@ namespace BilibiliTools
                     Console.WriteLine($"{DateTime.Now:yyyy-MM-dd HH:mm:ss:ffff} - {e.Message}");
                 }
             }
+
             _analysisResultConverter.Convert(_uploaderList, _episodeList, _partList);
         }
 
