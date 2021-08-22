@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace Rename
+namespace BilibiliTools
 {
     public static class Util
     {
