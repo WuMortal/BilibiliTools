@@ -6,11 +6,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Dapper" Version="2.0.90" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Processor" />
+      <PackageReference Include="System.Data.SQLite" Version="1.0.114.4" />
     </ItemGroup>
 
 </Project>
