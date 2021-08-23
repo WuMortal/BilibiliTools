@@ -1,0 +1,29 @@
+.video-card-container {
+    padding: 10px;
+    width: 180px;
+    margin: 0 0 3px;
+}
+
+.video-card-container .video-card {
+    width: 160px;
+    cursor: pointer;
+}
+
+.video-card-container .video-card:hover {
+    color: #00a1d6;
+}
+
+.video-card-container .video-card .video-card-cover {
+    background-size: cover;
+    display: block;
+    width: 160px;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+.video-card-container .video-card .video-card-title {
+    overflow: hidden;
+    display: block;
+    height: 38px;
+}

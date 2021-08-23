@@ -1,0 +1,8 @@
+<div class="video-card-container">
+  <nz-card class="video-card" [nzBorderless]="true" [nzCover]="coverTemplate" [nzBodyStyle]="videosCardClass">
+    <span class="video-card-title" [title]="video.title">{{ video.title }} </span>
+  </nz-card>
+  <ng-template #coverTemplate>
+    <img class="video-card-cover" alt="example" [src]="video.coverUrl" />
+  </ng-template>
+</div>
