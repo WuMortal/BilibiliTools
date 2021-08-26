@@ -1,5 +1,7 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilibiliTools", "BilibiliTools\BilibiliTools.csproj", "{F086662B-319F-45BF-AB1D-56BDC94C5651}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilibiliTools.Analyzer", "BilibiliTools.Analyzer\BilibiliTools.Analyzer.csproj", "{A23A7C9F-EFB8-4654-864A-2869B96D67A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilibiliTools.WebApi", "BilibiliTools.WebApi\BilibiliTools.WebApi.csproj", "{F28FF23F-8269-4234-993A-62AAD3874F47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,9 +13,13 @@ Global
 		{B639154E-6791-4627-845B-14C807013D9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B639154E-6791-4627-845B-14C807013D9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B639154E-6791-4627-845B-14C807013D9B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F086662B-319F-45BF-AB1D-56BDC94C5651}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F086662B-319F-45BF-AB1D-56BDC94C5651}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F086662B-319F-45BF-AB1D-56BDC94C5651}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F086662B-319F-45BF-AB1D-56BDC94C5651}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A23A7C9F-EFB8-4654-864A-2869B96D67A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A23A7C9F-EFB8-4654-864A-2869B96D67A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A23A7C9F-EFB8-4654-864A-2869B96D67A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A23A7C9F-EFB8-4654-864A-2869B96D67A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F28FF23F-8269-4234-993A-62AAD3874F47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F28FF23F-8269-4234-993A-62AAD3874F47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F28FF23F-8269-4234-993A-62AAD3874F47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F28FF23F-8269-4234-993A-62AAD3874F47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

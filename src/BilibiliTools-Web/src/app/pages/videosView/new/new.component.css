@@ -1,8 +1,9 @@
 .video-cards {
     display: flex;
-    margin-top: 15px;
     flex-direction: row;
     flex-wrap: wrap;
     overflow: auto;
+    height: 100%;
+    margin-top: 15px;
     height: calc(100% - 24px);
 }

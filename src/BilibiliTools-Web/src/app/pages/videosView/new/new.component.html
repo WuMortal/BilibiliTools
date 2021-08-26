@@ -5,27 +5,5 @@
   <button nz-button nzType="primary" nzSearch><i nz-icon nzType="search"></i></button>
 </ng-template>
 <div class="video-cards">
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
-  <video-card [video]="video"></video-card>
+  <video-card *ngFor="let video of videos" [video]="video"></video-card>
 </div>

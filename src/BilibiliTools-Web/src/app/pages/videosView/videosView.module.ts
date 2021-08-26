@@ -4,6 +4,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { VideosViewRoutingModule } from './videosView-routing.module';
 
 
@@ -17,7 +19,9 @@ import { VideosCardComponent } from '../common/videos-card/videos-card.component
     NzButtonModule,
     NzIconModule,
     NzCardModule,
-    NzGridModule
+    NzGridModule,
+    ScrollingModule,
+    DragDropModule
   ],
   declarations: [NewComponent, VideosCardComponent],
   exports: [NewComponent]
