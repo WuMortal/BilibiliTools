@@ -38,13 +38,13 @@ namespace BilibiliTools.Analyzer
                         _uploaderList.Add(Resolver.ResolveUploader(videoInfo));
                     }
 
-                    _episodeList.Add(Resolver.ResolveEpisode(videoInfo, episodeDirectoryInfo.FullName));
+                    _episodeList.Add(Resolver.ResolveEpisode(videoInfo, episodeDirectoryInfo.Name));
 
                     foreach (var partDirectoryInfo in GetVideoDirectories(episodeDirectoryInfo.FullName))
                     {
                         var partInfo = BuildBilibiliPartInfo(episodeDirectoryInfo.Name, partDirectoryInfo);
 
-                        _partList.Add(Resolver.ResolvePart(partInfo, partDirectoryInfo.FullName));
+                        _partList.Add(Resolver.ResolvePart(partInfo, path, partDirectoryInfo.FullName));
                     }
                 }
                 catch (FileNotFoundException e)

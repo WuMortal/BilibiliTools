@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Episode } from '../../../apis/dataApi';
 
 @Component({
   selector: 'video-card',
@@ -17,7 +18,7 @@ export class VideosCardComponent implements OnInit {
     'font-size': '12px'
   }
 
-  @Input() video!: any;
+  @Input() episode!: Episode;
   constructor() { }
 
   ngOnInit() {

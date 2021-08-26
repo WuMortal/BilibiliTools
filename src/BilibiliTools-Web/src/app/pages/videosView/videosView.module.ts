@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzGridModule } from 'ng-zorro-antd/grid';
-import { DragDropModule } from '@angular/cdk/drag-drop';
-import { ScrollingModule } from '@angular/cdk/scrolling';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { VideosViewRoutingModule } from './videosView-routing.module';
 
 
@@ -15,13 +15,13 @@ import { VideosCardComponent } from '../common/videos-card/videos-card.component
 @NgModule({
   imports: [
     VideosViewRoutingModule,
+    CommonModule,
     NzInputModule,
     NzButtonModule,
     NzIconModule,
     NzCardModule,
     NzGridModule,
-    ScrollingModule,
-    DragDropModule
+    NzSpinModule
   ],
   declarations: [NewComponent, VideosCardComponent],
   exports: [NewComponent]

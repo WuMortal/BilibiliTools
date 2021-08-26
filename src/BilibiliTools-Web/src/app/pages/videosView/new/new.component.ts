@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../../../environments/environment';
+import { DataApi, Episode } from '../../../apis/dataApi';
 
 interface Video {
   id: string;
@@ -12,25 +14,24 @@ interface Video {
   styleUrls: ['./new.component.css']
 })
 export class NewComponent implements OnInit {
-  videos: Video[] = [];
+  episodes: Episode[] = [];
 
-  constructor() { }
+  constructor(private api: DataApi) { }
 
   ngOnInit() {
-    for (let index = 1; index <= 100; index++) {
-      let video: Video = {
-        id: `${index}`,
-        coverUrl: '/assets/images/759ab8ea5c8ee1da37b179e83f9faadb4f4985d4.jpg@380w_240h_100Q_1c.webp',
-        title: `${index} -【半小时哲学】为什么世界上会有一群人而不是只有我自己，为什么唯我论必然是错的（哪怕是最高级版本）——先验主观主义 vs 辩证唯物主义`
-      };
-      this.videos.push(video);
-    }
-  }
+    this.api.getEpisode()
+      .subscribe(
+        result => {
 
-  getAllVideos() {
+          result.forEach(e => {
+            e.coverUrl = `${environment.serverAddress}\\Resource\\${e.coverImagePath}`
+          });
 
-    const sqlite3 = require('sqlite3').verbose();
-    let database = new sqlite3.Database('E:/Projects/BilibiliTools/src/BilibiliTools/bin/Debug/netcoreapp3.1/info.db3');
+          this.episodes = result;
+        },
+        error => {
+        }
+      );
   }
 }
 

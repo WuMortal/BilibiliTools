@@ -1,10 +1,14 @@
+using System.IO;
 using BilibiliTools.Analyzer;
 using BilibiliTools.Analyzer.Converter;
 using BilibiliTools.Web.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.Extensions.FileProviders.Physical;
 using Microsoft.Extensions.Hosting;
 
 namespace BilibiliTools.Web
@@ -29,6 +33,10 @@ namespace BilibiliTools.Web
                 new Analyzer.Analyzer(new SQLiteAnalyzeDater())
             );
 
+            services.AddCors(option =>
+            {
+                option.AddPolicy("any", builder => { builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader(); });
+            });
             services.AddControllers();
         }
 
@@ -40,6 +48,15 @@ namespace BilibiliTools.Web
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors("any");
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), "F:\\Other\\BilibiliCache"),
+                    ExclusionFilters.None
+                ),
+                RequestPath = new PathString("/Resource")
+            });
             app.UseRouting();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });

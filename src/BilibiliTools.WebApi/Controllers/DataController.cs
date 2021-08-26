@@ -13,7 +13,7 @@ namespace BilibiliTools.Web.Controllers
     public class DataController : ControllerBase
     {
         [HttpGet("[action]")]
-        public List<EpisodeResponse> GetEpisodes()
+        public List<EpisodeResponse> Episodes()
         {
             var sql = "SELECT EpisodeId,EpisodeTitle,CoverImagePath,CreateDate FROM Episode ORDER BY CreateDate DESC";
             using var connection = new SQLiteConnection(DataOptions.DateBaseConnectionStr);

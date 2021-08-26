@@ -19,22 +19,22 @@ namespace BilibiliTools.Analyzer
             };
         }
 
-        public static Episode ResolveEpisode(BilibiliVideoInfo bilibiliVideoInfo, string episodePath)
+        public static Episode ResolveEpisode(BilibiliVideoInfo bilibiliVideoInfo, string episodeRelativelyPath)
         {
             return new Episode
             {
                 EpisodeId = bilibiliVideoInfo.Bid,
                 EpisodeTitle = bilibiliVideoInfo.Title,
                 Aid = bilibiliVideoInfo.Aid,
-                DirectoryPath = episodePath,
-                CoverImagePath = new StringBuilder(episodePath).Append(@"\cover.jpg").ToString(),
+                DirectoryPath = episodeRelativelyPath,
+                CoverImagePath = new StringBuilder(episodeRelativelyPath).Append(@"\cover.jpg").ToString(),
                 CoverUrl = bilibiliVideoInfo.CoverURL,
                 UploaderId = bilibiliVideoInfo.Mid,
                 CreateDate = bilibiliVideoInfo.CreateDate
             };
         }
 
-        public static Part ResolvePart(BilibiliPartInfo partInfo, string partPath)
+        public static Part ResolvePart(BilibiliPartInfo partInfo, string rootPath, string partPath)
         {
             var filePath = Directory.GetFiles(partPath).FirstOrDefault(f => f.EndsWith(".mp4"));
             return new Part
@@ -43,8 +43,8 @@ namespace BilibiliTools.Analyzer
                 PartNo = partInfo.PartNo,
                 PartName = partInfo.PartName,
                 EpisodeId = partInfo.Bid,
-                DirectoryPath = partPath,
-                FileName = filePath?.Substring(partPath.Length - 1),
+                DirectoryPath = partPath.Replace(rootPath, string.Empty).TrimStart('\\'),
+                FileName = filePath?.Substring(partPath.Length + 1),
                 CreateDate = partInfo.CreateDate
             };
         }
