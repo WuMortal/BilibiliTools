@@ -21,7 +21,7 @@ export class ApiHttp {
 
   public Post<T>(address: string, data: any): Observable<T> {
     return this.http.post<T>(`${ApiHttp.serverAddress}${address}`, data, {
-      withCredentials: true
+      withCredentials: false
     }).pipe(catchError(this.handleError));
   }
 

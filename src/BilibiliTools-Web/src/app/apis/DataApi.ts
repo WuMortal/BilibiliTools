@@ -12,10 +12,13 @@ export class DataApi {
         private apiHttp: ApiHttp
     ) { ApiHttp.serverAddress = environment.serverAddress; }
 
-    public getEpisode(): Observable<Episode[]> {
-        return this.apiHttp.Get(`/api/Data/Episodes`);
+    public queryEpisode(data: any): Observable<PageList<Episode>> {
+        return this.apiHttp.Post(`/api/Data/QueryEpisodes`, data);
     }
 
+    public getAllUploader(): Observable<Uploader[]> {
+        return this.apiHttp.Get(`/api/Data/GetAllUploader`);
+    }
 
 }
 
@@ -27,3 +30,15 @@ export class Episode {
     public createDate!: string;
 }
 
+export class Uploader {
+    public uploaderId!: string;
+    public uploaderName!: string;
+    public uploaderAvatarUrl!: string;
+    public uploadCount!: number;
+    public createDate!: string;
+}
+
+class PageList<T> {
+    public totalCount!: number;
+    public item!: Array<T>;
+}

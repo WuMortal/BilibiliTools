@@ -5,6 +5,7 @@ using BilibiliTools.Web.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
@@ -32,11 +33,7 @@ namespace BilibiliTools.Web
             services.AddSingleton(
                 new Analyzer.Analyzer(new SQLiteAnalyzeDater())
             );
-
-            services.AddCors(option =>
-            {
-                option.AddPolicy("any", builder => { builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader(); });
-            });
+            
             services.AddControllers();
         }
 
@@ -48,7 +45,7 @@ namespace BilibiliTools.Web
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors("any");
+            app.UseCors(builder => { builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod(); });
             app.UseStaticFiles(new StaticFileOptions()
             {
                 FileProvider = new PhysicalFileProvider(

@@ -1,10 +1,22 @@
-<nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
-  <input type="text" nz-input placeholder="搜索视频" />
-</nz-input-group>
-<ng-template #suffixIconButton>
-  <button nz-button nzType="primary" nzSearch><i nz-icon nzType="search"></i></button>
-</ng-template>
-<div class="video-cards">
-  <nz-spin nzSimple></nz-spin>
-  <video-card *ngFor="let episode of episodes" [episode]="episode"></video-card>
+<form nz-form [formGroup]="queryData" (ngSubmit)="onSubmit()">
+  <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+    <input type="text" formControlName="queryText" nz-input placeholder="搜索视频" />
+  </nz-input-group>
+  <ng-template #suffixIconButton>
+    <button nz-button nzType="primary" nzSearch><i nz-icon nzType="search"></i></button>
+  </ng-template>
+</form>
+
+<div style="display: flex;margin: 5px 0px;">
+  <h3 *ngIf="totalCount>0"><span *ngIf="upId">当前正在检索 UP主：【{{ upName }}】，</span>共检索到 {{totalCount}} 个视频</h3>
+  <button style="margin-left: 10px;" nz-button nzType="primary" *ngIf="upId"><a
+      routerLink="/videosView/new">取消UP主检索</a></button>
 </div>
+
+<nz-empty style="margin-top: 20px;" *ngIf="totalCount<=0"></nz-empty>
+
+<nz-spin [ngClass]="{'nz-spin-empty' : totalCount<=0}" class="video-content" [nzSpinning]="isSpinning">
+  <div class="video-cards">
+    <video-card *ngFor="let episode of episodes" [episode]="episode"></video-card>
+  </div>
+</nz-spin>

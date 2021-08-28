@@ -1,0 +1,21 @@
+<div class="content">
+  <div class="ups">
+    <div class="up" *ngFor="let up of ups">
+      <nz-card style="width:300px;" [nzActions]="[actionEdit, actionEllipsis]">
+        <nz-card-meta nzTitle="{{ up.uploaderName }}" nzDescription="已下载视频数：{{ up.uploadCount }}"
+          [nzAvatar]="avatarTemplate">
+        </nz-card-meta>
+      </nz-card>
+      <ng-template #avatarTemplate>
+        <nz-avatar nzSrc="{{ up.uploaderAvatarUrl }}"></nz-avatar>
+      </ng-template>
+
+      <ng-template #actionEdit>
+        <i nz-icon nzType="edit"></i>
+      </ng-template>
+      <ng-template #actionEllipsis>
+        <a routerLink="/videosView/new/{{ up.uploaderId }}/{{ up.uploaderName }}">查看视频</a>
+      </ng-template>
+    </div>
+  </div>
+</div>

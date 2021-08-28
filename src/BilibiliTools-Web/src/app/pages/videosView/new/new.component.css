@@ -1,9 +1,37 @@
+nz-spin {
+    width: 100%;
+    height: calc(100% - 55px);
+    overflow: auto;
+}
+
+.nz-spin-empty {
+    height: 0px !important;
+}
+
 .video-cards {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    overflow: auto;
+    width: 100%;
+    margin-top: 5px;
     height: 100%;
-    margin-top: 15px;
-    height: calc(100% - 24px);
+}
+
+nz-spin::-webkit-scrollbar {
+    width: 8px;
+    background-color: #fff;
+}
+
+nz-spin::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #d2d2d2;
+}
+
+nz-spin::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+    background-color: #bababa;
+}
+
+nz-spin::-webkit-scrollbar-track {
+    background-color: #fff;
 }

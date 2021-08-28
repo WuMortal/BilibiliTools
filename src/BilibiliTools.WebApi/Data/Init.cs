@@ -27,6 +27,7 @@ namespace BilibiliTools.Web.Data
             CREATE TABLE ""Uploader"" (
               ""UploaderId"" VARCHAR(255) NOT NULL,
               ""UploaderName"" VARCHAR(255) NOT NULL,
+              ""UploaderAvatarUrl"" VARCHAR(500) NOT NULL,
               ""CreateDate"" DATE NOT NULL,
               PRIMARY KEY (""UploaderId"")
             );

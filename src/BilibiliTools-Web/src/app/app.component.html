@@ -1,10 +1,6 @@
 <nz-layout class="app-layout">
-  <nz-sider class="menu-sidebar"
-            nzCollapsible
-            nzWidth="256px"
-            nzBreakpoint="md"
-            [(nzCollapsed)]="isCollapsed"
-            [nzTrigger]="null">
+  <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null">
     <div class="sidebar-logo">
       <a href="https://ng.ant.design/" target="_blank">
         <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
@@ -18,7 +14,7 @@
             <a routerLink="/videosView/new">最新</a>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a>UP主</a>
+            <a routerLink="/videosView/up">UP主</a>
           </li>
         </ul>
       </li>
