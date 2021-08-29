@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using BilibiliTools.Analyzer;
 using BilibiliTools.Analyzer.Converter;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,14 +17,14 @@ namespace BilibiliTools.Web.Controllers
             _converter = converter;
         }
 
-        [HttpGet("[action]")]
-        public async Task<AnalyzeResult> RunAnalyze(string path)
+        [HttpPost("[action]")]
+        public async Task<int> RunAnalyze(string path = "F:\\Other\\BilibiliCache")
         {
             var result = _analyzer.Analyze(path);
 
             await _converter.Convert(result.UploaderList, result.EpisodeList, result.PartList);
 
-            return result;
+            return result.PartList.Count;
         }
     }
 }

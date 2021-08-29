@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using BilibiliTools.Analyzer.Bilibili;
-using BilibiliTools.Analyzer.Converter;
 using BilibiliTools.Analyzer.Model;
 using Newtonsoft.Json;
 
@@ -12,9 +11,9 @@ namespace BilibiliTools.Analyzer
 {
     public class Analyzer
     {
-        private readonly List<Uploader> _uploaderList = new List<Uploader>();
-        private readonly List<Episode> _episodeList = new List<Episode>();
-        private readonly List<Part> _partList = new List<Part>();
+        private List<Uploader> _uploaderList;
+        private List<Episode> _episodeList;
+        private List<Part> _partList;
 
         private readonly IAnalyzeDater _analyzeDater;
         private readonly DateTime _lastAnalysisTime;
@@ -22,11 +21,13 @@ namespace BilibiliTools.Analyzer
         public Analyzer(IAnalyzeDater analyzeDater)
         {
             _analyzeDater = analyzeDater;
-            _lastAnalysisTime = analyzeDater.GetAnalyzeDateTime();
+            _lastAnalysisTime = analyzeDater.GetAnalyzeDateTime(); //TODO:单例导致时间不更新
         }
 
         public AnalyzeResult Analyze(string path)
         {
+            Init(); //TODO:初始话考虑是否需要调整
+            
             foreach (var episodeDirectoryInfo in GetVideoDirectories(path))
             {
                 try
@@ -100,6 +101,13 @@ namespace BilibiliTools.Analyzer
             }
 
             return result;
+        }
+
+        private void Init()
+        {
+            _uploaderList = new List<Uploader>();
+            _episodeList = new List<Episode>();
+            _partList = new List<Part>();
         }
     }
 }
