@@ -1,7 +1,13 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilibiliTools.Analyzer", "BilibiliTools.Analyzer\BilibiliTools.Analyzer.csproj", "{A23A7C9F-EFB8-4654-864A-2869B96D67A0}"
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34018.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BilibiliTools.Analyzer", "BilibiliTools.Analyzer\BilibiliTools.Analyzer.csproj", "{A23A7C9F-EFB8-4654-864A-2869B96D67A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilibiliTools.WebApi", "BilibiliTools.WebApi\BilibiliTools.WebApi.csproj", "{F28FF23F-8269-4234-993A-62AAD3874F47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BilibiliTools.WebApi", "BilibiliTools.WebApi\BilibiliTools.WebApi.csproj", "{F28FF23F-8269-4234-993A-62AAD3874F47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilibiliTools.Transfer", "BilibiliTools.Transfer\BilibiliTools.Transfer.csproj", "{4F983164-25F3-417F-81BE-74498D85DBE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B639154E-6791-4627-845B-14C807013D9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B639154E-6791-4627-845B-14C807013D9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B639154E-6791-4627-845B-14C807013D9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B639154E-6791-4627-845B-14C807013D9B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A23A7C9F-EFB8-4654-864A-2869B96D67A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A23A7C9F-EFB8-4654-864A-2869B96D67A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A23A7C9F-EFB8-4654-864A-2869B96D67A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -21,5 +23,12 @@ Global
 		{F28FF23F-8269-4234-993A-62AAD3874F47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F28FF23F-8269-4234-993A-62AAD3874F47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F28FF23F-8269-4234-993A-62AAD3874F47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F983164-25F3-417F-81BE-74498D85DBE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F983164-25F3-417F-81BE-74498D85DBE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F983164-25F3-417F-81BE-74498D85DBE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F983164-25F3-417F-81BE-74498D85DBE4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

@@ -16,18 +16,17 @@ namespace BilibiliTools.Analyzer
         private List<Part> _partList;
 
         private readonly IAnalyzeDater _analyzeDater;
-        private readonly DateTime _lastAnalysisTime;
+        // private readonly DateTime _lastAnalysisTime;
 
         public Analyzer(IAnalyzeDater analyzeDater)
         {
             _analyzeDater = analyzeDater;
-            _lastAnalysisTime = analyzeDater.GetAnalyzeDateTime(); //TODO:单例导致时间不更新
         }
 
         public AnalyzeResult Analyze(string path)
         {
             Init(); //TODO:初始话考虑是否需要调整
-            
+
             foreach (var episodeDirectoryInfo in GetVideoDirectories(path))
             {
                 try
@@ -89,12 +88,13 @@ namespace BilibiliTools.Analyzer
 
         private List<DirectoryInfo> GetVideoDirectories(string path)
         {
+            var lastAnalysisTime = _analyzeDater.GetAnalyzeDateTime(); //TODO:单例导致时间不更新
             var result = new List<DirectoryInfo>();
             var directoryPaths = Directory.GetDirectories(path);
             foreach (var directoryPath in directoryPaths)
             {
                 var directoryInfo = new DirectoryInfo(directoryPath);
-                if (directoryInfo.LastWriteTime > _lastAnalysisTime)
+                if (directoryInfo.LastWriteTime > lastAnalysisTime)
                 {
                     result.Add(directoryInfo);
                 }
