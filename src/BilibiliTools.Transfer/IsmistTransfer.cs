@@ -17,7 +17,7 @@ namespace BilibiliTools.Transfer
             var isIsmistPoinstVideo = episode.EpisodeTitle.Contains("（");
             if (!isIsmistPoinstVideo)
             {
-                return isOnlyOnePart ? Path.Combine(TargetDirectoryPath, $"{episode.EpisodeTitle}.mp4") : Path.Combine(TargetDirectoryPath, episode.EpisodeTitle, $"{part.DirectoryPath.Split("//")[1]}.mp4");
+                return isOnlyOnePart ? Path.Combine(TargetDirectoryPath, $"{episode.EpisodeTitle}.mp4") : Path.Combine(TargetDirectoryPath, episode.EpisodeTitle, $"{part.DirectoryPath.Split("\\")[1]}.mp4");
             }
             else
             {

@@ -4,7 +4,8 @@ using Dapper;
 using System.Data.SQLite;
 
 var sourceDirectoryPath = "F:\\Other\\BilibiliCache";
-ITransfer transfer = new IsmistTransfer();
+//ITransfer transfer = new IsmistTransfer();
+ITransfer transfer = new CommonTransfer();
 
 Console.WriteLine($"开始迁移关于{transfer.Keyword}相关的数据，数据根目录：{sourceDirectoryPath}");
 await using var connection = new SQLiteConnection("Data Source=E:\\Projects\\BilibiliTools\\src\\BilibiliTools.WebApi\\info.db3");
